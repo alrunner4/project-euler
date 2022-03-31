@@ -1,0 +1,7 @@
+package projecteuler-common
+authors = "alrunner4@gmail.com"
+modules =
+   Lists,
+   Math,
+   Monads
+
