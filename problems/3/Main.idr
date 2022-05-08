@@ -1,11 +1,12 @@
 import Lists {- first, last -}
 import Math {- isqrt -}
+import Data.List1
 
 export total
-factors: Integer -> List Integer
+factors: Integer -> List1 Integer
 factors n = case first (\ i => n `mod` i == 0) [2 .. isqrt n] of
-  Just i => i :: factors (assert_smaller n (n `div` i))
-  Nothing => [n]
+  Just i => cons i (factors (assert_smaller n (n `div` i)))
+  Nothing => n ::: []
 
 ||| The prime factors of 13195 are 5, 7, 13 and 29.
 ||| What is the largest prime factor of the number 600851475143 ?
