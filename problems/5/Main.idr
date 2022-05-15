@@ -4,4 +4,10 @@ import Lists
 ||| remainder.  What is the smallest positive number that is evenly divisible by all of the numbers
 ||| from 1 to 20?
 main: IO ()
-main = printLn$ first (\n => all (\i => n `mod` i == 0) [20..1]) [20,40..]
+main = printLn$
+   first
+      (\n =>
+         all
+            (\i => n `mod` i == 0)
+            [20..1])
+      [20,40..]
